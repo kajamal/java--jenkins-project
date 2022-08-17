@@ -17,15 +17,15 @@ pipeline {
         }
         stage("sonar"){
             steps{
-               sh 'mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=ak_sonar \
-  -Dsonar.host.url=http://3.95.181.64:9000 \
-  -Dsonar.login=sqp_1b652e58a2325794aa56ce06da171a04d8acf2e6'
+             sh 'mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=ak1_sonar \
+  -Dsonar.host.url=http://34.230.17.68:9000 \
+  -Dsonar.login=sqp_26a70f8efca0e4998f5282f53882d8cc25880f92'
         }
         }
         stage("build Docker image"){
             steps{
-               sh "docker build -t abbaskhan/works-with-heroku-2.0 ."
+               sh "docker build -t abbaskhan1/works-with-heroku-2.0 ."
 
 
 
@@ -33,7 +33,7 @@ pipeline {
          }
              stage("Docker deployement"){
               steps{
-                 sh "docker run -d -p 8015:8080 abbaskhan/works-with-heroku-2.0"
+                 sh "docker run -d -p 8016:8080 abbaskhan1/works-with-heroku-2.0"
 
 
             }
