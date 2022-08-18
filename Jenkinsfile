@@ -47,5 +47,14 @@ pipeline {
        
     }
 }
+        stage('tomcat deploy'){
+            steps{
+                sshagent(['nex_tom']) {
+                    sh "scp -o StrictHostKeyChecking=no target/works-with-heroku-1.0-SNAPSHOT.war ubuntu@34.224.215.33:/home/ubuntu/apache-tomcat-8.5.82/webapps"
+
+    
+}
+    }
+}
     }
 }
