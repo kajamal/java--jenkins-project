@@ -17,10 +17,10 @@ pipeline {
         }
         stage("sonar"){
             steps{
-             sh 'mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=ak1_sonar \
-  -Dsonar.host.url=http://34.230.17.68:9000 \
-  -Dsonar.login=sqp_26a70f8efca0e4998f5282f53882d8cc25880f92'
+           sh 'mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=ak_sonar \
+  -Dsonar.host.url=http://52.23.230.225:9000 \
+  -Dsonar.login=sqp_01c7994be42b2066f7b5337da988bd9b6de2a19b'
         }
         }
         stage("build Docker image"){
