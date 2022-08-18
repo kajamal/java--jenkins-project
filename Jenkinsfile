@@ -38,10 +38,14 @@ pipeline {
 
             }
              }
+        stage('nexus upload'){
+            steps{
+                nexusArtifactUploader artifacts: [[artifactId: 'works-with-heroku', classifier: '', file: 'target/works-with-heroku-1.0-SNAPSHOT.war', type: 'war']], credentialsId: 'ak_nexus', groupId: 'works.buddy.samples', nexusUrl: '34.224.215.33:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
 
 
 
        
     }
 }
-
+    }
+}
